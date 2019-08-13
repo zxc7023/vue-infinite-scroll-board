@@ -14,7 +14,7 @@ export default new Router({
       component : MainView
     },
     {
-      path : '/request/:req_no',
+      path : '/posts/:req_no',
       name : 'ListDetail',
       component : ListDetail
     }
