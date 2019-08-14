@@ -1,19 +1,24 @@
 <template>
-  <div class="advertisement" v-if="advertisement != null">
-    <header class="card-header col-12">
-      <h4 class="card-title">sponser</h4>
-    </header>
-    <div class="col-12 col-sm-6" style="padding: 0;">
-      <img :src="'http://comento.cafe24.com/public/images/'+advertisement.img" class="rounded-0 card-img">
-    </div>
-    <div class="col-12 col-sm-6">
-        <div class="card-body">
-            <h4 class="card-title">{{advertisement.title}}</h4>
-            <p class="card-text">{{advertisement.contents}}</p>
+  <div v-if="advertisement != null" class="advertisement">
+    <div class="card overflow-hidden ad-card">
+      <div class="col-12">
+        <div class="row">
+          <header class="card-header col-12">
+            <h4 class="card-title">sponser</h4>
+          </header>
+          <div class="col-12 col-sm-6" style="padding: 0;">
+            <img :src="'http://comento.cafe24.com/public/images/'+advertisement.img" class="rounded-0 card-img">
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="card-body">
+              <h4 class="card-title">{{advertisement.title}}</h4>
+              <p class="card-text">{{advertisement.contents}}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>

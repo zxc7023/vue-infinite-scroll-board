@@ -14,7 +14,9 @@ export default new Vuex.Store({
     advertisements : [],
     page : 1,
     adPage : 1,
-    isLoading : false
+    isLoading : false,
+    searchType : "contents",
+    searchValue : ''
   },
   getters : {
     getCategory : function (state){
@@ -34,6 +36,12 @@ export default new Vuex.Store({
     },
     getIsLoading : function(state){
       return state.isLoading
+    },
+    getSearchType : function(state){
+      return state.searchType
+    },
+    getSearchValue : function(state){
+      return state.searchValue
     }
   },
   mutations : {
@@ -63,6 +71,12 @@ export default new Vuex.Store({
     },
     plusAdpage : function(state){
       state.adPage += 1
+    },
+    updateSearchType : function(state,payload){
+      state.searchType = payload
+    },
+    updateSearchValue : function(state,payload){
+      state.searchValue = payload
     }
   },
   actions : {
