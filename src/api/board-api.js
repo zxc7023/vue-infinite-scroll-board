@@ -5,7 +5,7 @@ export const _getCategory = () => {
 }
 
 export const _getPosts = (page, ord, category) => {
-  return axios.get('http://comento.cafe24.com/request.php', {
+  return axios.get('https://comento.cafe24.com/request.php', {
     params : {
       page : page,
       ord : ord,

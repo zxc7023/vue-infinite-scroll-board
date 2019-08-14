@@ -78,12 +78,12 @@ export default new Vuex.Store({
     },
     async categoryChange({commit,dispatch},checked){
       commit('setChecked',checked)
-
+      commit('setPage',1)
       await dispatch('setPosts');
     },
     async ordChange({commit,dispatch},ord){
       commit('setOrd',ord)
-
+      commit('setPage',1)
       await dispatch('setPosts');
     },
     async setPosts({state,commit}){
@@ -93,7 +93,6 @@ export default new Vuex.Store({
       commit('setIsLoading',false)
     },
     async morePosts({state, commit}){
-
         commit('setPage',state.page+1);
         const res = await _getPosts(state.page, state.ord, state.checked)
         commit('setPosts', state.posts.concat(res.data.list))
@@ -104,7 +103,7 @@ export default new Vuex.Store({
       commit('setAdvertisements',res.data.list)
     },
     async moreAdvertisements({state, commit}){
-      commit('plusAdpage')
+      commit('setAdpage',state.adPage+1)
       let res = await _getAdvertisement(state.adPage, 1)
       if(res.status = 200 && res.data.list.length == 0){
           commit('setAdpage',1)
